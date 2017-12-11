@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicantEducationsPoco.cs" />
+    <Compile Include="ApplicantJobApplicationsPoco.cs" />
     <Compile Include="IPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
