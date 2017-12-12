@@ -8,20 +8,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CareerCloud.Pocos
 {
-    [Table("Company_Job_Skills")]
-    public class CompanyJobSkillsPoco : IPoco
+    [Table("Company_Descriptions")]
+    public class CompanyDescriptionPoco : IPoco
     {
         [Key]
         public Guid Id { get; set; }
 
-        public Guid Job { get; set; }
+        public Guid Company { get; set; }
 
-        public string Skill { get; set; }
+        public string LanguageID { get; set; }
 
-        [Column("Skill_Level")]
-        public string SkillLevel { get; set; }
+        [Column("Company_Name")]
+        public string CompanyName { get; set; }
 
-        public int Importance { get; set; }
+        [Column("Company_Description")]
+        public string CompanyDescription { get; set; }
 
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }

@@ -5,23 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CareerCloud.Pocos
 {
-    [Table("Company_Descriptions")]
-    public class CompanyDescriptionsPoco : IPoco
+    [Table("Company_Jobs")]
+    public class CompanyJobPoco : IPoco
     {
+
         [Key]
         public Guid Id { get; set; }
 
         public Guid Company { get; set; }
 
-        public string LanguageID { get; set; }
+        [Column("Profile_Created")]
+        public DateTime MyProfileCreatedProperty { get; set; }
 
-        [Column("Company_Name")]
-        public string CompanyName { get; set; }
+        [Column("Is_Inactive")]
+        public Boolean IsInactive { get; set; }
 
-        [Column("Company_Description")]
-        public string CompanyDescription { get; set; }
+        [Column("Is_Company_Hidden")]
+        public Boolean IsCompanyHidden { get; set; }
 
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }

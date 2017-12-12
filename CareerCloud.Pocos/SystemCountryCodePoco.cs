@@ -8,15 +8,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CareerCloud.Pocos
 {
-    [Table("Security_Roles")]
-    public class SecurityRolesPoco : IPoco
+    [Table("System_Country_Codes")]
+    public class SystemCountryCodePoco
     {
         [Key]
-        public Guid Id { get; set; }
+        public string Code { get; set; }
 
-        public string Role { get; set; }
-
-        [Column("Is_Inactive")]
-        public Boolean IsInactive { get; set; }
+        public string Name { get; set; }
     }
 }

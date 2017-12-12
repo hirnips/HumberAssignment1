@@ -8,12 +8,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CareerCloud.Pocos
 {
-    [Table("System_Country_Codes")]
-    public class SystemCountryCodesPoco
+    [Table("System_Language_Codes")]
+    public class SystemLanguageCodePoco
     {
-        [Key]
-        public string Code { get; set; }
+        public string LanguageID { get; set; }
 
         public string Name { get; set; }
+
+        [Column("Native_Name")]
+        public string NativeName { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CareerCloud.Pocos
 {
     [Table("Company_Locations")]
-    public class CompanyLocationsPoco: IPoco
+    public class CompanyLocationPoco : IPoco
     {
         [Key]
         public Guid Id { get; set; }
@@ -33,6 +33,5 @@ namespace CareerCloud.Pocos
 
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
-
     }
 }

@@ -8,17 +8,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CareerCloud.Pocos
 {
-    [Table("Applicant_Resumes")]
-    public class ApplicantResumesPoco : IPoco
+    [Table("Security_Roles")]
+    public class SecurityRolePoco : IPoco
     {
         [Key]
         public Guid Id { get; set; }
 
-        public Guid Applicant { get; set; }
+        public string Role { get; set; }
 
-        public string Resume { get; set; }
-
-        [Column("Last_Updated")]
-        public DateTime LastUpdated { get; set; }
+        [Column("Is_Inactive")]
+        public Boolean IsInactive { get; set; }
     }
 }
