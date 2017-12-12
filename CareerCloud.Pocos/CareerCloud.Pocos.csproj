@@ -47,6 +47,7 @@
     <Compile Include="ApplicantResumesPoco.cs" />
     <Compile Include="ApplicantSkillsPoco.cs" />
     <Compile Include="ApplicantWorkHistoryPoco.cs" />
+    <Compile Include="CompanyDescriptionsPoco.cs" />
     <Compile Include="IPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
