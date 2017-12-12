@@ -52,6 +52,7 @@
     <Compile Include="CompanyJobsDescriptionsPoco.cs" />
     <Compile Include="CompanyJobSkillsPoco.cs" />
     <Compile Include="CompanyJobsPoco.cs" />
+    <Compile Include="CompanyLocationsPoco.cs" />
     <Compile Include="IPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
