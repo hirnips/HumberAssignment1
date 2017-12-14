@@ -18,7 +18,7 @@ namespace CareerCloud.Pocos
         public Guid Company { get; set; }
 
         [Column("Profile_Created")]
-        public DateTime MyProfileCreatedProperty { get; set; }
+        public DateTime ProfileCreated { get; set; }
 
         [Column("Is_Inactive")]
         public Boolean IsInactive { get; set; }
