@@ -30,11 +30,11 @@ namespace CareerCloud.ADODataAccessLayer
                                            ,[Completion_Date]
                                            ,[Completion_Percent])
                                      VALUES
-                                           (@Id,
+                                           (@Id
                                            ,@Applicant
                                            ,@Major
                                            ,@Certificate_Diploma
-                                           ,@Start_Date, date
+                                           ,@Start_Date
                                            ,@Completion_Date
                                            ,@Completion_Percent)";
 
