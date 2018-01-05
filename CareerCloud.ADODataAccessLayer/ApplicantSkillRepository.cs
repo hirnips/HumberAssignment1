@@ -96,7 +96,15 @@ namespace CareerCloud.ADODataAccessLayer
                     poco.Skill  = rdr.GetString(2);
                     poco.SkillLevel = rdr.GetString(3);
                     poco.StartMonth = rdr.GetByte(4);
-                    poco.StartYear = rdr.GetInt32(5);
+                    if(rdr.IsDBNull(5))
+                    {
+                        poco.StartYear = 0;
+                    }
+                    else
+                    {
+                        poco.StartYear = rdr.GetInt32(5);
+                    }
+                    
                     poco.EndMonth = rdr.GetByte(6);
                     poco.EndYear = rdr.GetInt32(7);
                     poco.TimeStamp = (byte[])rdr[8];

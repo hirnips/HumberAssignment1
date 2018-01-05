@@ -101,14 +101,79 @@ namespace CareerCloud.ADODataAccessLayer
 
                     poco.Id = rdr.GetGuid(0);
                     poco.Login = rdr.GetGuid(1);
-                    poco.CurrentSalary = rdr.GetDecimal(2);
-                    poco.CurrentRate = rdr.GetDecimal(3);
-                    poco.Currency = rdr.GetString(4);
-                    poco.Country = rdr.GetString(5);
-                    poco.Province = rdr.GetString(6);
-                    poco.Street = rdr.GetString(7);
-                    poco.City = rdr.GetString(8);
-                    poco.PostalCode = rdr.GetString(9);
+                    if(rdr.IsDBNull(2))
+                    {
+                        poco.CurrentSalary = 0;
+                    }
+                    else
+                    {
+                        poco.CurrentSalary = rdr.GetDecimal(2);
+                    }
+                   
+                    if(rdr.IsDBNull(3))
+                    {
+                        poco.CurrentRate = 0;
+                    }
+                    else
+                    {
+                        poco.CurrentRate = rdr.GetDecimal(3);
+                    }
+                    
+                    if(rdr.IsDBNull(4))
+                    {
+                        poco.Currency = "";
+                    }
+                    else
+                    {
+                        poco.Currency = rdr.GetString(4);
+                    }
+
+                    if (rdr.IsDBNull(5))
+                    {
+                        poco.Country = "";
+                    }
+                    else
+                    {
+                        poco.Country = rdr.GetString(5);
+                    }
+
+                    if (rdr.IsDBNull(6))
+                    {
+                        poco.Province = "";
+                    }
+                    else
+                    {
+                        poco.Province = rdr.GetString(6);
+                    }
+                    
+                    if(rdr.IsDBNull(7))
+                    {
+                        poco.Street = "";
+                    }
+                    else
+                    {
+                        poco.Street = rdr.GetString(7);
+                    }
+                    
+
+                    if(rdr.IsDBNull(8))
+                    {
+                        poco.City = "";
+                    }
+                    else
+                    {
+                        poco.City = rdr.GetString(8);
+                    }
+                    
+                    if(rdr.IsDBNull(9))
+                    {
+                        poco.PostalCode = "";
+                    }
+                    else
+                    {
+                        poco.PostalCode = rdr.GetString(9);
+                    }
+                   
                     poco.TimeStamp = (byte[])rdr[10];
 
                     pocos[counter] = poco;

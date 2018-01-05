@@ -88,10 +88,42 @@ namespace CareerCloud.ADODataAccessLayer
                     poco.Id = rdr.GetGuid(0);
                     poco.Applicant = rdr.GetGuid(1);
                     poco.Major = rdr.GetString(2);
-                    poco.CertificateDiploma = rdr.GetString(3);
-                    poco.StartDate = rdr.GetDateTime(4);
-                    poco.CompletionDate = rdr.GetDateTime(5);
-                    poco.CompletionPercent = rdr.GetByte(6);
+                    if(rdr.IsDBNull(3))
+                    {
+                        poco.CertificateDiploma = "";
+                    }
+                    else
+                    {
+                        poco.CertificateDiploma = rdr.GetString(3);
+                    }
+
+                    if (rdr.IsDBNull(4))
+                    {
+                        poco.StartDate = null;
+                    }
+                    else
+                    {
+                        poco.StartDate = rdr.GetDateTime(4);
+                    }
+                    
+                    if(rdr.IsDBNull(5))
+                    {
+                        poco.CompletionDate = null;
+                    }
+                    else
+                    {
+                        poco.CompletionDate = rdr.GetDateTime(5);
+                    }
+
+                    if(rdr.IsDBNull(6))
+                    {
+                        poco.CompletionPercent = null;
+                    }
+                    else
+                    {
+                        poco.CompletionPercent = rdr.GetByte(6);
+                    }
+                    
                     poco.TimeStamp = (byte[])rdr[7];
 
                     pocos[counter] = poco;

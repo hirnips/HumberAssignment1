@@ -74,7 +74,15 @@ namespace CareerCloud.ADODataAccessLayer
                     poco.Id = rdr.GetGuid(0);
                     poco.Login = rdr.GetGuid(1);
                     poco.Role = rdr.GetGuid(2);
-                    poco.TimeStamp = (byte[])rdr[3];
+                    if (rdr.IsDBNull(3))
+                    {
+                        poco.TimeStamp = null;
+                    }
+                    else
+                    {
+                        poco.TimeStamp = (byte[])rdr[3];
+                    }
+                    
 
                     pocos[counter] = poco;
                     counter++;

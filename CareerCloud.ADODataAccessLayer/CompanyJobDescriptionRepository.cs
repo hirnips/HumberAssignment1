@@ -78,9 +78,33 @@ namespace CareerCloud.ADODataAccessLayer
 
                     poco.Id = rdr.GetGuid(0);
                     poco.Job = rdr.GetGuid(1);
-                    poco.JobName = rdr.GetString(2);
-                    poco.JobDescriptions  = rdr.GetString(3);
-                    poco.TimeStamp = (byte[])rdr[4];
+                    if(rdr.IsDBNull(2))
+                    {
+                        poco.JobName = "";
+                    }
+                    else
+                    {
+                        poco.JobName = rdr.GetString(2);
+                    }
+                    
+                    if(rdr.IsDBNull(3))
+                    {
+                        poco.JobDescriptions = "";
+                    }
+                    else
+                    {
+                        poco.JobDescriptions = rdr.GetString(3);
+                    }
+
+                    if (rdr.IsDBNull(4))
+                    {
+                        poco.TimeStamp = null;
+                    }
+                    else
+                    {
+                        poco.TimeStamp = (byte[])rdr[4];
+                    }
+                   
 
                     pocos[counter] = poco;
                     counter++;

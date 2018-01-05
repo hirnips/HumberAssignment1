@@ -84,7 +84,16 @@ namespace CareerCloud.ADODataAccessLayer
                     poco.ProfileCreated = rdr.GetDateTime(2);
                     poco.IsInactive  = rdr.GetBoolean(3);
                     poco.IsCompanyHidden = rdr.GetBoolean(4);
-                    poco.TimeStamp = (byte[])rdr[5];
+
+                    if(rdr.IsDBNull(5))
+                    {
+                        poco.TimeStamp = null;
+                    }
+                    else
+                    {
+                        poco.TimeStamp = (byte[])rdr[5];
+                    }
+                    
 
                     pocos[counter] = poco;
                     counter++;

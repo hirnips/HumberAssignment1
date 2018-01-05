@@ -114,7 +114,15 @@ namespace CareerCloud.ADODataAccessLayer
                         poco.CompanyLogo = (byte[])rdr[5];
                     }
                     
-                    poco.TimeStamp = (byte[])rdr[6];
+                    if(rdr.IsDBNull(6))
+                    {
+                        poco.TimeStamp = null;
+                    }
+                    else
+                    {
+                        poco.TimeStamp = (byte[])rdr[6];
+                    }
+                    
 
                     pocos[counter] = poco;
                     counter++;
