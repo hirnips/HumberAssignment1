@@ -28,27 +28,22 @@ namespace CareerCloud.BusinessLogicLayer
         protected override void Verify(ApplicantEducationPoco[] pocos)
         {
             List<ValidationException> exceptions = new List<ValidationException>();
-            string[] requiredExtendedPasswordChars = new string[] { "$", "*", "#", "_", "@" };
-
+            
             foreach (var poco in pocos)
             {
-                //Check major is null or not and length is more than 3
-                if (string.IsNullOrEmpty(poco.Major))
+                if (!string.IsNullOrEmpty(poco.Major))
                 {
-                    exceptions.Add(new ValidationException(107, $"Cannot be empty or less than 3 characters {poco.Id}."));
-                }
-                else if (poco.Major.Length < 3)
-                {
-                    exceptions.Add(new ValidationException(107, $"Cannot be empty or less than 3 characters { poco.Id}."));
-                }
+                    if (poco.Major.Length < 3)
+                    {
+                        exceptions.Add(new ValidationException(107, $"Cannot be empty or less than 3 characters { poco.Id}."));
+                    }                    
+                } 
                 
-                //Check start date should not be greater than today
                 if(poco.StartDate > DateTime.Today)
                 {
                     exceptions.Add(new ValidationException(108, $"Cannot be greater than today { poco.Id }."));
                 }
-
-                //Check CompletionDate cannot be earlier than StartDate
+                
                 if(poco.CompletionDate < poco.StartDate)
                 {
                     exceptions.Add(new ValidationException(109, $"CompletionDate cannot be earlier than StartDate { poco.Id }."));
