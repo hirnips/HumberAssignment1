@@ -8,33 +8,33 @@ using CareerCloud.DataAccessLayer;
 
 namespace CareerCloud.BusinessLogicLayer
 {
-    public class ApplicantJobApplicationLogic : BaseLogic<ApplicantJobApplicationPoco>
+    public class ApplicantWorkHistoryLogic : BaseLogic<ApplicantWorkHistoryPoco>
     {
-        public ApplicantJobApplicationLogic(IDataRepository<ApplicantJobApplicationPoco> repository) : base(repository)
-        {
+        public ApplicantWorkHistoryLogic(IDataRepository<ApplicantWorkHistoryPoco> repository) : base(repository)
+        { 
         }
 
-        public override void Add(ApplicantJobApplicationPoco[] pocos)
+        public override void Add(ApplicantWorkHistoryPoco[] pocos)
         {
             Verify(pocos);
             base.Add(pocos);
         }
 
-        public override void Update(ApplicantJobApplicationPoco[] pocos)
+        public override void Update(ApplicantWorkHistoryPoco[] pocos)
         {
             Verify(pocos);
             base.Update(pocos);
         }
 
-        protected override void Verify(ApplicantJobApplicationPoco[] pocos)
+        protected override void Verify(ApplicantWorkHistoryPoco[] pocos)
         {
             List<ValidationException> exceptions = new List<ValidationException>();
-            
+
             foreach (var poco in pocos)
             {
-                if (poco.ApplicationDate > DateTime.Today)
+                if (poco.CompanyName.Length  < 2)
                 {
-                    exceptions.Add(new ValidationException(110, $"Application date cannot be greater than today { poco.Id }."));
+                    exceptions.Add(new ValidationException(105, $"Company name must be greater then 2 characters {poco.Id}."));
                 }
             }
 

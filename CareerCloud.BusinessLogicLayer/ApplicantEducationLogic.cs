@@ -31,22 +31,23 @@ namespace CareerCloud.BusinessLogicLayer
             
             foreach (var poco in pocos)
             {
-                if (!string.IsNullOrEmpty(poco.Major))
+                if (string.IsNullOrEmpty(poco.Major))
                 {
-                    if (poco.Major.Length < 3)
-                    {
-                        exceptions.Add(new ValidationException(107, $"Cannot be empty or less than 3 characters { poco.Id}."));
-                    }                    
-                } 
-                
-                if(poco.StartDate > DateTime.Today)
+                    exceptions.Add(new ValidationException(107, $"Major Cannot be empty or less than 3 characters { poco.Id}."));
+                }
+                else if (poco.Major.Length < 3)
                 {
-                    exceptions.Add(new ValidationException(108, $"Cannot be greater than today { poco.Id }."));
+                    exceptions.Add(new ValidationException(107, $"Major Cannot be empty or less than 3 characters { poco.Id}."));
+                }
+
+                if (poco.StartDate > DateTime.Today)
+                {
+                    exceptions.Add(new ValidationException(108, $"Start date Cannot be greater than today { poco.Id }."));
                 }
                 
                 if(poco.CompletionDate < poco.StartDate)
                 {
-                    exceptions.Add(new ValidationException(109, $"CompletionDate cannot be earlier than StartDate { poco.Id }."));
+                    exceptions.Add(new ValidationException(109, $"Completion date cannot be earlier than StartDate { poco.Id }."));
                 }
             }
 
