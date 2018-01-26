@@ -11,7 +11,7 @@ namespace CareerCloud.ADODataAccessLayer
 {
     public class BaseClass
     {
-        protected string _connString;
+        protected readonly string _connString;
 
         public BaseClass()
         {
