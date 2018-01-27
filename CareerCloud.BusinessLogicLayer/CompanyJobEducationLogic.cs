@@ -32,16 +32,23 @@ namespace CareerCloud.BusinessLogicLayer
 
             foreach (var poco in pocos)
             {
-                if (poco.Major.Length < 2)
-                {
-                    exceptions.Add(new ValidationException(200, $"Major must be at least 2 characters {poco.Id}."));
-                }
-
                 if (poco.Importance < 0)
                 {
                     exceptions.Add(new ValidationException(201, $"Importance cannot be less than 0  {poco.Id}."));
                 }
 
+                if(string.IsNullOrEmpty(poco.Major))
+                {
+                    exceptions.Add(new ValidationException(200, $"Major must be at least 2 characters {poco.Id}."));
+                }
+                else
+                {
+                    if (poco.Major.Length <= 2)
+                    {
+                        exceptions.Add(new ValidationException(200, $"Major must be at least 2 characters {poco.Id}."));
+                    }
+                }
+               
             }
 
             if (exceptions.Count > 0)

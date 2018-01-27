@@ -32,32 +32,48 @@ namespace CareerCloud.BusinessLogicLayer
 
             foreach (var poco in pocos)
             {
-                if (poco.CompanyWebsite.EndsWith(".ca") || poco.CompanyWebsite.EndsWith(".com") || poco.CompanyWebsite.EndsWith(".biz"))
+
+                if (string.IsNullOrEmpty(poco.CompanyWebsite))
                 {
                     exceptions.Add(new ValidationException(600, $"Valid websites must end with the following extensions – .ca, .com, .biz  {poco.Id}."));
                 }
+                else
+                {
+                    Boolean flag = !(poco.CompanyWebsite.EndsWith(".ca") || poco.CompanyWebsite.EndsWith(".com") || poco.CompanyWebsite.EndsWith(".biz"));
+                    if (flag)
+                    {
+                        exceptions.Add(new ValidationException(600, $"Valid websites must end with the following extensions – .ca, .com, .biz  {poco.Id}."));
+                    }
+                }
 
-                string[] phoneComponents = poco.ContactPhone.Split('-');
-                if (phoneComponents.Length < 3)
+
+                if (string.IsNullOrEmpty(poco.ContactPhone))
                 {
                     exceptions.Add(new ValidationException(601, $"PhoneNumber for Company Profile {poco.Id} is not in the required format."));
                 }
                 else
                 {
-                    if (phoneComponents[0].Length < 3)
+                    string[] phoneComponents = poco.ContactPhone.Split('-');
+                    if (phoneComponents.Length < 3)
                     {
                         exceptions.Add(new ValidationException(601, $"PhoneNumber for Company Profile {poco.Id} is not in the required format."));
                     }
-                    else if (phoneComponents[1].Length < 3)
+                    else
                     {
-                        exceptions.Add(new ValidationException(601, $"PhoneNumber for Company Profile {poco.Id} is not in the required format."));
-                    }
-                    else if (phoneComponents[2].Length < 4)
-                    {
-                        exceptions.Add(new ValidationException(601, $"PhoneNumber for Company Profile {poco.Id} is not in the required format."));
+                        if (phoneComponents[0].Length < 3)
+                        {
+                            exceptions.Add(new ValidationException(601, $"PhoneNumber for Company Profile {poco.Id} is not in the required format."));
+                        }
+                        else if (phoneComponents[1].Length < 3)
+                        {
+                            exceptions.Add(new ValidationException(601, $"PhoneNumber for Company Profile {poco.Id} is not in the required format."));
+                        }
+                        else if (phoneComponents[2].Length < 4)
+                        {
+                            exceptions.Add(new ValidationException(601, $"PhoneNumber for Company Profile {poco.Id} is not in the required format."));
+                        }
                     }
                 }
-
             }
 
             if (exceptions.Count > 0)
