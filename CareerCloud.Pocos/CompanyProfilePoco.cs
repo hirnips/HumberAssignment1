@@ -31,5 +31,6 @@ namespace CareerCloud.Pocos
 
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
+        public IEnumerable<CompanyDescriptionPoco> companyDescriptions { get; set; }
     }
 }

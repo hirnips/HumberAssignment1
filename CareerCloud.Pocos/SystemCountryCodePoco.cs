@@ -15,5 +15,9 @@ namespace CareerCloud.Pocos
         public string Code { get; set; }
 
         public string Name { get; set; }
+
+        public IEnumerable<ApplicantProfilePoco> ApplicantProfiles { get; set; }
+
+        public IEnumerable<ApplicantWorkHistoryPoco> ApplicantWorkHistories { get; set; }
     }
 }
