@@ -26,6 +26,6 @@ namespace CareerCloud.Pocos
 
         public virtual ApplicantProfilePoco ApplicantProfile { get; set; }
 
-        public IEnumerable<CompanyJobPoco> CompanyJobs { get; set; }
+        public virtual IEnumerable<CompanyJobPoco> CompanyJobs { get; set; }
     }
 }
