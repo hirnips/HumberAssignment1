@@ -66,7 +66,7 @@ namespace CareerCloud.ADODataAccessLayer
                                       FROM [dbo].[Company_Job_Educations]";
 
                 int counter = 0;
-                CompanyJobEducationPoco[] pocos = new CompanyJobEducationPoco[1001];
+                CompanyJobEducationPoco[] pocos = new CompanyJobEducationPoco[1100];
 
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();

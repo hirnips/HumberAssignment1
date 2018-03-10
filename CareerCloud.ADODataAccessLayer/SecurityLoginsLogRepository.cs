@@ -69,7 +69,7 @@ namespace CareerCloud.ADODataAccessLayer
                                       FROM [dbo].[Security_Logins_Log]";
 
                 int counter = 0;
-                SecurityLoginsLogPoco[] pocos = new SecurityLoginsLogPoco[1723];
+                SecurityLoginsLogPoco[] pocos = new SecurityLoginsLogPoco[1900];
 
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
