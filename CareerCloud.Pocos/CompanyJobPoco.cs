@@ -26,6 +26,7 @@ namespace CareerCloud.Pocos
         [Column("Is_Company_Hidden")]
         public Boolean IsCompanyHidden { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
         public virtual IEnumerable<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }

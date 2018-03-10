@@ -20,6 +20,7 @@ namespace CareerCloud.Pocos
 
         public Int16 Importance { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
         public virtual CompanyJobPoco CompanyJob { get; set; }

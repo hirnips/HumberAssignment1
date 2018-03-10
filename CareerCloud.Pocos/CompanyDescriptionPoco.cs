@@ -26,6 +26,7 @@ namespace CareerCloud.Pocos
         [Column("Company_Description")]
         public string CompanyDescription { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
         public virtual CompanyProfilePoco companyProfile { get; set; }

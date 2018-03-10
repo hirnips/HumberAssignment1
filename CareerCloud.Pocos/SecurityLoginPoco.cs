@@ -52,6 +52,7 @@ namespace CareerCloud.Pocos
         [Column("Prefferred_Language")]
         public string PrefferredLanguage { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
 

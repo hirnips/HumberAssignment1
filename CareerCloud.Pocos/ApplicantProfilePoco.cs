@@ -45,6 +45,7 @@ namespace CareerCloud.Pocos
         //public string ZipPostalCode { get; set; }
         public string PostalCode { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
 
