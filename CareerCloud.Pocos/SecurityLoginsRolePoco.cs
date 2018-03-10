@@ -21,6 +21,7 @@ namespace CareerCloud.Pocos
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
+
         public virtual SecurityLoginPoco SecurityLogin { get; set; }
         public virtual SecurityRolePoco SecurityRole { get; set; }
     }

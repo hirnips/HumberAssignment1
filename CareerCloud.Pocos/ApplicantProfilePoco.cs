@@ -49,15 +49,13 @@ namespace CareerCloud.Pocos
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
 
-        public virtual IEnumerable<ApplicantEducationPoco> ApplicantEducations { get; set; }
-
-        public virtual IEnumerable<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }
+        public virtual ICollection<ApplicantEducationPoco> ApplicantEducations { get; set; }
+        public virtual ICollection<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }
         public virtual SecurityLoginPoco SecurityLogin { get; set; }
-
         public virtual SystemCountryCodePoco SystemCountryCode { get; set; }
         public virtual ApplicantResumePoco ApplicantResume { get; set; }
-        public virtual IEnumerable<ApplicantSkillPoco> ApplicantSkills { get; set; }
-        public virtual IEnumerable<ApplicantWorkHistoryPoco> GetApplicantWorkHistories { get; set; }
+        public virtual ICollection<ApplicantSkillPoco> ApplicantSkills { get; set; }
+        public virtual ICollection<ApplicantWorkHistoryPoco> ApplicantWorkHistories { get; set; }
 
     }
 }

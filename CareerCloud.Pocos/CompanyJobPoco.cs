@@ -29,9 +29,10 @@ namespace CareerCloud.Pocos
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
-        public virtual IEnumerable<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }
+
+        public virtual ICollection<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }
         public virtual CompanyJobEducationPoco CompanyJobEducation { get; set; }
-        public virtual IEnumerable<CompanyJobSkillPoco> GetCompanyJobSkills { get; set; }
+        public virtual ICollection<CompanyJobSkillPoco> CompanyJobSkills { get; set; }
         public virtual CompanyProfilePoco CompanyProfile { get; set; }
         public virtual CompanyJobDescriptionPoco CompanyJobDescription { get; set; }
     }

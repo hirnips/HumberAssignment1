@@ -57,7 +57,7 @@ namespace CareerCloud.Pocos
         public Byte[] TimeStamp { get; set; }
 
         public virtual ApplicantProfilePoco ApplicantProfile { get; set; }
-        public virtual IEnumerable<SecurityLoginsLogPoco> securityLoginsLogs { get; set; }
-        public virtual SecurityLoginsRolePoco securityLoginsRole { get; set; }
+        public virtual ICollection<SecurityLoginsLogPoco> SecurityLoginsLogs { get; set; }
+        public virtual SecurityLoginsRolePoco SecurityLoginsRole { get; set; }
     }
 }
