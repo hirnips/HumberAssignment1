@@ -12,9 +12,11 @@ namespace CareerCloud.Pocos
     public class CompanyProfilePoco : IPoco
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
         [Column("Registration_Date")]
+        [Required]
         public DateTime RegistrationDate { get; set; }
 
         [Column("Company_Website")]

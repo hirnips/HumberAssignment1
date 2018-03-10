@@ -12,12 +12,16 @@ namespace CareerCloud.Pocos
     public class CompanyJobEducationPoco : IPoco
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Job { get; set; }
 
+        [Required]
         public string Major { get; set; }
 
+        [Required]
         public Int16 Importance { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

@@ -11,7 +11,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
 {
     public class CareerCloudContext : DbContext
     {
-        public CareerCloudContext() : base("dbConnection")
+        public CareerCloudContext() : base(ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString)
         {
         }
 
@@ -37,7 +37,37 @@ namespace CareerCloud.EntityFrameworkDataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CompanyJobPoco>()
+                .HasMany(e => e.CompanyJobDescriptions)
+                .WithRequired(e => e.CompanyJob)
+                .HasForeignKey(e => e.Job)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<CompanyJobPoco>()
+                .HasMany(e => e.CompanyJobEducations)
+                .WithRequired(e => e.CompanyJob)
+                .HasForeignKey(e => e.Job)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ApplicantProfilePoco>()
+                .HasMany(a => a.ApplicantResumes)
+                .WithRequired(r => r.ApplicantProfile)
+                .HasForeignKey(r => r.Applicant)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SecurityLoginPoco>()
+                .HasMany(s => s.ApplicantProfiles)
+                .WithRequired(a => a.SecurityLogin)
+                .HasForeignKey(a => a.Login)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SecurityLoginPoco>()
+                .HasMany(s => s.SecurityLoginsRoles)
+                .WithRequired(r => r.SecurityLogin)
+                .HasForeignKey(r => r.Login)
+                .WillCascadeOnDelete(false);
+
+            //base.OnModelCreating(modelBuilder);
         }
 
     }

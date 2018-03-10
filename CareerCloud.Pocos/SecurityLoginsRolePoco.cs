@@ -12,10 +12,13 @@ namespace CareerCloud.Pocos
     public class SecurityLoginsRolePoco : IPoco
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Login { get; set; }
 
+        [Required]
         public Guid Role { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

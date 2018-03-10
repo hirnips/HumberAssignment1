@@ -13,8 +13,10 @@ namespace CareerCloud.Pocos
     {
 
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Login { get; set; }
 
         [Column("Current_Salary")]
@@ -53,7 +55,8 @@ namespace CareerCloud.Pocos
         public virtual ICollection<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }
         public virtual SecurityLoginPoco SecurityLogin { get; set; }
         public virtual SystemCountryCodePoco SystemCountryCode { get; set; }
-        public virtual ApplicantResumePoco ApplicantResume { get; set; }
+        public virtual ICollection<ApplicantResumePoco> ApplicantResumes { get; set; }
+        //public virtual ApplicantResumePoco ApplicantResume { get; set; }
         public virtual ICollection<ApplicantSkillPoco> ApplicantSkills { get; set; }
         public virtual ICollection<ApplicantWorkHistoryPoco> ApplicantWorkHistories { get; set; }
 

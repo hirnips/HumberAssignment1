@@ -12,11 +12,14 @@ namespace CareerCloud.Pocos
     public class CompanyLocationPoco : IPoco
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Company { get; set; }
 
         [Column("Country_Code")]
+        [Required]
         public string CountryCode { get; set; }
 
         [Column("State_Province_Code")]

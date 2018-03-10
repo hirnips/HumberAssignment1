@@ -13,12 +13,16 @@ namespace CareerCloud.Pocos
     {
 
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public string Login { get; set; }
 
+        [Required]
         public string Password { get; set; }
 
+        [Required]
         [Column("Created_Date")]
         //public DateTime CreatedDate { get; set; }
         public DateTime Created { get; set; }
@@ -32,12 +36,15 @@ namespace CareerCloud.Pocos
         public DateTime? AgreementAccepted { get; set; }
 
         [Column("Is_Locked")]
+        [Required]
         public Boolean IsLocked { get; set; }
 
         [Column("Is_Inactive")]
+        [Required]
         public Boolean IsInactive { get; set; }
 
         [Column("Email_Address")]
+        [Required]
         public string EmailAddress { get; set; }
 
         [Column("Phone_Number")]
@@ -47,6 +54,7 @@ namespace CareerCloud.Pocos
         public string FullName { get; set; }
 
         [Column("Force_Change_Password")]
+        [Required]
         public Boolean ForceChangePassword { get; set; }
 
         [Column("Prefferred_Language")]
@@ -56,8 +64,8 @@ namespace CareerCloud.Pocos
         [Column("Time_Stamp")]
         public Byte[] TimeStamp { get; set; }
 
-        public virtual ApplicantProfilePoco ApplicantProfile { get; set; }
+        public virtual ICollection<ApplicantProfilePoco> ApplicantProfiles { get; set; }
         public virtual ICollection<SecurityLoginsLogPoco> SecurityLoginsLogs { get; set; }
-        public virtual SecurityLoginsRolePoco SecurityLoginsRole { get; set; }
+        public virtual ICollection<SecurityLoginsRolePoco> SecurityLoginsRoles { get; set; }
     }
 }

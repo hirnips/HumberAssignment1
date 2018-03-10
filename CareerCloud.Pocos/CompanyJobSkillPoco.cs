@@ -13,15 +13,20 @@ namespace CareerCloud.Pocos
     {
 
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Job { get; set; }
 
+        [Required]
         public string Skill { get; set; }
 
         [Column("Skill_Level")]
+        [Required]
         public string SkillLevel { get; set; }
 
+        [Required]
         public int Importance { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

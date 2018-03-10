@@ -13,8 +13,10 @@ namespace CareerCloud.Pocos
     {
 
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Job { get; set; }
 
         [Column("Job_Name")]

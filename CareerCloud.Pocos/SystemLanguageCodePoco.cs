@@ -12,11 +12,14 @@ namespace CareerCloud.Pocos
     public class SystemLanguageCodePoco
     {
         [Key]
+        [Required]
         public string LanguageID { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         [Column("Native_Name")]
+        [Required]
         public string NativeName { get; set; }
 
         public virtual CompanyDescriptionPoco CompanyDescription { get; set; }

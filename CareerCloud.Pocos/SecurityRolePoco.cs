@@ -12,11 +12,14 @@ namespace CareerCloud.Pocos
     public class SecurityRolePoco : IPoco
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public string Role { get; set; }
 
         [Column("Is_Inactive")]
+        [Required]
         public Boolean IsInactive { get; set; }
 
         public virtual ICollection<SecurityLoginsRolePoco> SecurityLoginsRoles { get; set; }

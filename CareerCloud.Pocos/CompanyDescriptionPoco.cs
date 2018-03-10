@@ -12,18 +12,23 @@ namespace CareerCloud.Pocos
     public class CompanyDescriptionPoco : IPoco
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Company { get; set; }
 
         [Column("LanguageID")]
+        [Required]
         //public string LanguageID { get; set; }
         public string LanguageId { get; set; }
 
         [Column("Company_Name")]
+        [Required]
         public string CompanyName { get; set; }
 
         [Column("Company_Description")]
+        [Required]
         public string CompanyDescription { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

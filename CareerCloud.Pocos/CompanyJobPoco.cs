@@ -12,18 +12,24 @@ namespace CareerCloud.Pocos
     public class CompanyJobPoco : IPoco
     {
 
-        [Key]
+        [Key] 
+        [Required]
         public Guid Id { get; set; }
-
+        
+        [Required]
         public Guid Company { get; set; }
 
+
         [Column("Profile_Created")]
+        [Required]
         public DateTime ProfileCreated { get; set; }
 
         [Column("Is_Inactive")]
+        [Required]
         public Boolean IsInactive { get; set; }
 
         [Column("Is_Company_Hidden")]
+        [Required]
         public Boolean IsCompanyHidden { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
@@ -31,9 +37,9 @@ namespace CareerCloud.Pocos
         public Byte[] TimeStamp { get; set; }
 
         public virtual ICollection<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }
-        public virtual CompanyJobEducationPoco CompanyJobEducation { get; set; }
+        public virtual ICollection<CompanyJobEducationPoco> CompanyJobEducations { get; set; }
         public virtual ICollection<CompanyJobSkillPoco> CompanyJobSkills { get; set; }
         public virtual CompanyProfilePoco CompanyProfile { get; set; }
-        public virtual CompanyJobDescriptionPoco CompanyJobDescription { get; set; }
+        public virtual ICollection<CompanyJobDescriptionPoco> CompanyJobDescriptions { get; set; }
     }
 }

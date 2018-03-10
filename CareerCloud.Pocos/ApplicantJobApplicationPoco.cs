@@ -12,13 +12,17 @@ namespace CareerCloud.Pocos
     public class ApplicantJobApplicationPoco : IPoco
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid Applicant { get; set; }
 
+        [Required]
         public Guid Job { get; set; }
 
         [Column("Application_Date")]
+        [Required]
         public DateTime ApplicationDate { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
