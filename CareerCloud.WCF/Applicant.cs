@@ -13,37 +13,37 @@ namespace CareerCloud.WCF
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Applicant" in both code and config file together.
     public class Applicant : IApplicant
     {
-        public void ApplicanEducation(ApplicantEducationPoco[] items)
+        public void AddApplicantEducation(ApplicantEducationPoco[] items)
         {
             var logic = new ApplicantEducationLogic(new EFGenericRepository<ApplicantEducationPoco>(false));
             logic.Add(items);
         }
 
-        public void ApplicantJobApplication(ApplicantJobApplicationPoco[] items)
+        public void AddApplicantJobApplication(ApplicantJobApplicationPoco[] items)
         {
             var logic = new ApplicantJobApplicationLogic(new EFGenericRepository<ApplicantJobApplicationPoco>(false));
             logic.Add(items);
         }
 
-        public void ApplicantProfile(ApplicantProfilePoco[] items)
+        public void AddApplicantProfile(ApplicantProfilePoco[] items)
         {
             var logic = new ApplicantProfileLogic(new EFGenericRepository<ApplicantProfilePoco>(false));
             logic.Add(items);
         }
 
-        public void ApplicantResume(ApplicantResumePoco[] items)
+        public void AddApplicantResume(ApplicantResumePoco[] items)
         {
             var logic = new ApplicantResumeLogic(new EFGenericRepository<ApplicantResumePoco>(false));
             logic.Add(items);
         }
 
-        public void ApplicantSkill(ApplicantSkillPoco[] items)
+        public void AddApplicantSkill(ApplicantSkillPoco[] items)
         {
             var logic = new ApplicantSkillLogic(new EFGenericRepository<ApplicantSkillPoco>(false));
             logic.Add(items);
         }
 
-        public void ApplicantWorkHistory(ApplicantWorkHistoryPoco[] items)
+        public void AddApplicantWorkHistory(ApplicantWorkHistoryPoco[] items)
         {
             var logic = new ApplicantWorkHistoryLogic(new EFGenericRepository<ApplicantWorkHistoryPoco>(false));
             logic.Add(items);

@@ -13,7 +13,7 @@ namespace CareerCloud.WCF
     public interface IApplicant
     {
         [OperationContract]
-        void ApplicanEducation(ApplicantEducationPoco[] items);
+        void AddApplicantEducation(ApplicantEducationPoco[] items);
 
         [OperationContract]
         List<ApplicantEducationPoco> GetAllApplicantEducation();
@@ -30,7 +30,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void ApplicantJobApplication(ApplicantJobApplicationPoco[] items);
+        void AddApplicantJobApplication(ApplicantJobApplicationPoco[] items);
 
         [OperationContract]
         List<ApplicantJobApplicationPoco> GetAllApplicantJobApplication();
@@ -47,7 +47,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void ApplicantProfile(ApplicantProfilePoco[] items);
+        void AddApplicantProfile(ApplicantProfilePoco[] items);
 
         [OperationContract]
         List<ApplicantProfilePoco> GetAllApplicantProfile();
@@ -65,7 +65,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void ApplicantResume(ApplicantResumePoco[] items);
+        void AddApplicantResume(ApplicantResumePoco[] items);
 
         [OperationContract]
         List<ApplicantResumePoco> GetAllApplicantResume();
@@ -83,7 +83,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void ApplicantSkill(ApplicantSkillPoco[] items);
+        void AddApplicantSkill(ApplicantSkillPoco[] items);
 
         [OperationContract]
         List<ApplicantSkillPoco> GetAllApplicantSkill();
@@ -101,7 +101,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void ApplicantWorkHistory(ApplicantWorkHistoryPoco[] items);
+        void AddApplicantWorkHistory(ApplicantWorkHistoryPoco[] items);
 
         [OperationContract]
         List<ApplicantWorkHistoryPoco> GetAllApplicantWorkHistory();

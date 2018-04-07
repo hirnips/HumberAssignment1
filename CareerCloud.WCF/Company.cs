@@ -13,43 +13,43 @@ namespace CareerCloud.WCF
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Company" in both code and config file together.
     public class Company : ICompany
     {
-        public void CompanyDescription(CompanyDescriptionPoco[] items)
+        public void AddCompanyDescription(CompanyDescriptionPoco[] items)
         {
             var logic = new CompanyDescriptionLogic(new EFGenericRepository<CompanyDescriptionPoco>(false));
             logic.Add(items);
         }
 
-        public void CompanyJob(CompanyJobPoco[] items)
+        public void AddCompanyJob(CompanyJobPoco[] items)
         {
             var logic = new CompanyJobLogic(new EFGenericRepository<CompanyJobPoco>(false));
             logic.Add(items);
         }
 
-        public void CompanyJobDescription(CompanyJobDescriptionPoco[] items)
+        public void AddCompanyJobDescription(CompanyJobDescriptionPoco[] items)
         {
             var logic = new CompanyJobDescriptionLogic(new EFGenericRepository<CompanyJobDescriptionPoco>(false));
             logic.Add(items);
         }
 
-        public void CompanyJobEducation(CompanyJobEducationPoco[] items)
+        public void AddCompanyJobEducation(CompanyJobEducationPoco[] items)
         {
             var logic = new CompanyJobEducationLogic(new EFGenericRepository<CompanyJobEducationPoco>(false));
             logic.Add(items);
         }
 
-        public void CompanyJobSkill(CompanyJobSkillPoco[] items)
+        public void AddCompanyJobSkill(CompanyJobSkillPoco[] items)
         {
             var logic = new CompanyJobSkillLogic(new EFGenericRepository<CompanyJobSkillPoco>(false));
             logic.Add(items);
         }
 
-        public void CompanyLocation(CompanyLocationPoco[] items)
+        public void AddCompanyLocation(CompanyLocationPoco[] items)
         {
             var logic = new CompanyLocationLogic(new EFGenericRepository<CompanyLocationPoco>(false));
             logic.Add(items);
         }
 
-        public void CompanyProfile(CompanyProfilePoco[] items)
+        public void AddCompanyProfile(CompanyProfilePoco[] items)
         {
             var logic = new CompanyProfileLogic(new EFGenericRepository<CompanyProfilePoco>(false));
             logic.Add(items);

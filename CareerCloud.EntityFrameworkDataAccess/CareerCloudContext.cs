@@ -161,7 +161,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
 
 
 
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
 
     }

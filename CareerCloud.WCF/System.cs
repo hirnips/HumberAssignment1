@@ -58,13 +58,13 @@ namespace CareerCloud.WCF
             logic.Delete(items);
         }
 
-        public void SystemCountryCode(SystemCountryCodePoco[] items)
+        public void AddSystemCountryCode(SystemCountryCodePoco[] items)
         {
             var logic = new SystemCountryCodeLogic(new EFGenericRepository<SystemCountryCodePoco>(false));
             logic.Add(items);
         }
 
-        public void SystemLanguageCode(SystemLanguageCodePoco[] items)
+        public void AddSystemLanguageCode(SystemLanguageCodePoco[] items)
         {
             var logic = new SystemLanguageCodeLogic(new EFGenericRepository<SystemLanguageCodePoco>(false));
             logic.Add(items);

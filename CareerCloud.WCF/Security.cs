@@ -101,25 +101,25 @@ namespace CareerCloud.WCF
             logic.Delete(items);
         }
 
-        public void SecurityLogin(SecurityLoginPoco[] items)
+        public void AddSecurityLogin(SecurityLoginPoco[] items)
         {
             var logic = new SecurityLoginLogic(new EFGenericRepository<SecurityLoginPoco>(false));
             logic.Add(items);
         }
 
-        public void SecurityLoginsLog(SecurityLoginsLogPoco[] items)
+        public void AddSecurityLoginsLog(SecurityLoginsLogPoco[] items)
         {
             var logic = new SecurityLoginsLogLogic(new EFGenericRepository<SecurityLoginsLogPoco>(false));
             logic.Add(items);
         }
 
-        public void SecurityLoginsRole(SecurityLoginsRolePoco[] items)
+        public void AddSecurityLoginsRole(SecurityLoginsRolePoco[] items)
         {
             var logic = new SecurityLoginsRoleLogic(new EFGenericRepository<SecurityLoginsRolePoco>(false));
             logic.Add(items);
         }
 
-        public void SecurityRole(SecurityRolePoco[] items)
+        public void AddSecurityRole(SecurityRolePoco[] items)
         {
             var logic = new SecurityRoleLogic(new EFGenericRepository<SecurityRolePoco>(false));
             logic.Add(items);

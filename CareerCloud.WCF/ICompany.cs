@@ -13,7 +13,7 @@ namespace CareerCloud.WCF
     public interface ICompany
     {
         [OperationContract]
-        void CompanyDescription(CompanyDescriptionPoco[] items);
+        void AddCompanyDescription(CompanyDescriptionPoco[] items);
 
         [OperationContract]
         List<CompanyDescriptionPoco> GetAllCompanyDescription();
@@ -31,7 +31,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void CompanyJobDescription(CompanyJobDescriptionPoco[] items);
+        void AddCompanyJobDescription(CompanyJobDescriptionPoco[] items);
 
         [OperationContract]
         List<CompanyJobDescriptionPoco> GetAllCompanyJobDescription();
@@ -49,7 +49,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void CompanyJobEducation(CompanyJobEducationPoco[] items);
+        void AddCompanyJobEducation(CompanyJobEducationPoco[] items);
 
         [OperationContract]
         List<CompanyJobEducationPoco> GetAllCompanyJobEducation();
@@ -67,7 +67,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void CompanyJob(CompanyJobPoco[] items);
+        void AddCompanyJob(CompanyJobPoco[] items);
 
         [OperationContract]
         List<CompanyJobPoco> GetAllCompanyJob();
@@ -85,7 +85,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void CompanyJobSkill(CompanyJobSkillPoco[] items);
+        void AddCompanyJobSkill(CompanyJobSkillPoco[] items);
 
         [OperationContract]
         List<CompanyJobSkillPoco> GetAllCompanyJobSkill();
@@ -102,7 +102,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void CompanyLocation(CompanyLocationPoco[] items);
+        void AddCompanyLocation(CompanyLocationPoco[] items);
 
         [OperationContract]
         List<CompanyLocationPoco> GetAllCompanyLocation();
@@ -119,7 +119,7 @@ namespace CareerCloud.WCF
 
 
         [OperationContract]
-        void CompanyProfile(CompanyProfilePoco[] items);
+        void AddCompanyProfile(CompanyProfilePoco[] items);
 
         [OperationContract]
         List<CompanyProfilePoco> GetAllCompanyProfile();
