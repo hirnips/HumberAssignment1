@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareerCloud.BusinessLogicLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareerCloud.EntityFrameworkDataAccess", "CareerCloud.EntityFrameworkDataAccess\CareerCloud.EntityFrameworkDataAccess.csproj", "{52F86B3F-D459-45DB-A1F7-D52EC92F5FF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareerCloud.WCF", "CareerCloud.WCF\CareerCloud.WCF.csproj", "{D1353E60-7068-4793-A1FD-376AC15D2E2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{52F86B3F-D459-45DB-A1F7-D52EC92F5FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52F86B3F-D459-45DB-A1F7-D52EC92F5FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52F86B3F-D459-45DB-A1F7-D52EC92F5FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1353E60-7068-4793-A1FD-376AC15D2E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1353E60-7068-4793-A1FD-376AC15D2E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1353E60-7068-4793-A1FD-376AC15D2E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1353E60-7068-4793-A1FD-376AC15D2E2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
