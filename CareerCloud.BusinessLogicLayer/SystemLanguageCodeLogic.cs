@@ -22,6 +22,24 @@ namespace CareerCloud.BusinessLogicLayer
             _repository.Add(pocos);
         }
 
+        public void Delete(SystemLanguageCodePoco[] pocos)
+        {
+            Verify(pocos);
+            _repository.Remove(pocos);
+        }
+
+        public List<SystemLanguageCodePoco> GetAll()
+        {
+            return _repository.GetAll().ToList();
+        }
+
+        public SystemLanguageCodePoco GetSingle(string Id)
+        {
+            SystemLanguageCodePoco systemLanguageCodePoco = new SystemLanguageCodePoco();
+            systemLanguageCodePoco = _repository.GetSingle(c => c.LanguageID == Id);
+            return systemLanguageCodePoco;
+        }
+
         public void Update(SystemLanguageCodePoco[] pocos)
         {
             Verify(pocos);
