@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using CareerCloud.Pocos;
+using CareerCloud.BusinessLogicLayer;
+using CareerCloud.EntityFrameworkDataAccess;
 
 namespace CareerCloud.WCF
 {
@@ -13,156 +15,206 @@ namespace CareerCloud.WCF
     {
         public void ApplicanEducation(ApplicantEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantEducationLogic(new EFGenericRepository<ApplicantEducationPoco>(false));
+            logic.Add(items);
         }
 
         public void ApplicantJobApplication(ApplicantJobApplicationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantJobApplicationLogic(new EFGenericRepository<ApplicantJobApplicationPoco>(false));
+            logic.Add(items);
         }
 
         public void ApplicantProfile(ApplicantProfilePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantProfileLogic(new EFGenericRepository<ApplicantProfilePoco>(false));
+            logic.Add(items);
         }
 
         public void ApplicantResume(ApplicantResumePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantResumeLogic(new EFGenericRepository<ApplicantResumePoco>(false));
+            logic.Add(items);
         }
 
         public void ApplicantSkill(ApplicantSkillPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantSkillLogic(new EFGenericRepository<ApplicantSkillPoco>(false));
+            logic.Add(items);
         }
 
         public void ApplicantWorkHistory(ApplicantWorkHistoryPoco[] items)
         {
-            throw new NotImplementedException();
-        }
-
-        public void DoWork()
-        {
+            var logic = new ApplicantWorkHistoryLogic(new EFGenericRepository<ApplicantWorkHistoryPoco>(false));
+            logic.Add(items);
         }
 
         public List<ApplicantEducationPoco> GetAllApplicantEducation()
         {
-            throw new NotImplementedException();
+            List<ApplicantEducationPoco> applicantEducationPocos = new List<ApplicantEducationPoco>();
+            var logic = new ApplicantEducationLogic(new EFGenericRepository<ApplicantEducationPoco>(false));
+            applicantEducationPocos =  logic.GetAll();
+            return applicantEducationPocos;
         }
 
         public List<ApplicantJobApplicationPoco> GetAllApplicantJobApplication()
         {
-            throw new NotImplementedException();
+            List<ApplicantJobApplicationPoco> applicantJobApplicationPocos = new List<ApplicantJobApplicationPoco>();
+            var logic = new ApplicantJobApplicationLogic(new EFGenericRepository<ApplicantJobApplicationPoco>(false));
+            applicantJobApplicationPocos = logic.GetAll();
+            return applicantJobApplicationPocos;
         }
 
         public List<ApplicantProfilePoco> GetAllApplicantProfile()
         {
-            throw new NotImplementedException();
+            List<ApplicantProfilePoco> applicantProfilePocos = new List<ApplicantProfilePoco>();
+            var logic = new ApplicantProfileLogic(new EFGenericRepository<ApplicantProfilePoco>(false));
+            applicantProfilePocos = logic.GetAll();
+            return applicantProfilePocos;
         }
 
         public List<ApplicantResumePoco> GetAllApplicantResume()
         {
-            throw new NotImplementedException();
+            List<ApplicantResumePoco> applicantResumePocos = new List<ApplicantResumePoco>();
+            var logic = new ApplicantResumeLogic(new EFGenericRepository<ApplicantResumePoco>(false));
+            applicantResumePocos = logic.GetAll();
+            return applicantResumePocos;
         }
 
         public List<ApplicantSkillPoco> GetAllApplicantSkill()
         {
-            throw new NotImplementedException();
+            List<ApplicantSkillPoco> applicantSkillPocos = new List<ApplicantSkillPoco>();
+            var logic = new ApplicantSkillLogic(new EFGenericRepository<ApplicantSkillPoco>(false));
+            applicantSkillPocos = logic.GetAll();
+            return applicantSkillPocos;
         }
 
         public List<ApplicantWorkHistoryPoco> GetAllApplicantWorkHistory()
         {
-            throw new NotImplementedException();
+            List<ApplicantWorkHistoryPoco> applicantWorkHistoryPoco = new List<ApplicantWorkHistoryPoco>();
+            var logic = new ApplicantWorkHistoryLogic(new EFGenericRepository<ApplicantWorkHistoryPoco>(false));
+            applicantWorkHistoryPoco = logic.GetAll();
+            return applicantWorkHistoryPoco;
         }
 
         public ApplicantEducationPoco GetSingleApplicantEducation(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantEducationLogic(new EFGenericRepository<ApplicantEducationPoco>(false));
+            ApplicantEducationPoco applicantEducationPoco = new ApplicantEducationPoco();
+            applicantEducationPoco = logic.Get(Guid.Parse(Id));
+            return applicantEducationPoco;
         }
 
         public ApplicantJobApplicationPoco GetSingleApplicantJobApplication(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantJobApplicationLogic(new EFGenericRepository<ApplicantJobApplicationPoco>(false));
+            ApplicantJobApplicationPoco applicantJobApplicationPoco = new ApplicantJobApplicationPoco();
+            applicantJobApplicationPoco = logic.Get(Guid.Parse(Id));
+            return applicantJobApplicationPoco;
         }
 
         public ApplicantProfilePoco GetSingleApplicantProfile(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantProfileLogic(new EFGenericRepository<ApplicantProfilePoco>(false));
+            ApplicantProfilePoco applicantProfilePoco = new ApplicantProfilePoco();
+            applicantProfilePoco = logic.Get(Guid.Parse(Id));
+            return applicantProfilePoco;
         }
 
         public ApplicantResumePoco GetSingleApplicantResume(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantResumeLogic(new EFGenericRepository<ApplicantResumePoco>(false));
+            ApplicantResumePoco applicantResumePoco = new ApplicantResumePoco();
+            applicantResumePoco = logic.Get(Guid.Parse(Id));
+            return applicantResumePoco;
         }
 
         public ApplicantSkillPoco GetSingleApplicantSkill(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantSkillLogic(new EFGenericRepository<ApplicantSkillPoco>(false));
+            ApplicantSkillPoco applicantSkillPoco = new ApplicantSkillPoco();
+            applicantSkillPoco = logic.Get(Guid.Parse(Id));
+            return applicantSkillPoco;
         }
 
         public ApplicantWorkHistoryPoco GetSingleApplicantWorkHistory(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantWorkHistoryLogic(new EFGenericRepository<ApplicantWorkHistoryPoco>(false));
+            ApplicantWorkHistoryPoco applicantWorkHistoryPoco = new ApplicantWorkHistoryPoco();
+            applicantWorkHistoryPoco = logic.Get(Guid.Parse(Id));
+            return applicantWorkHistoryPoco;
         }
 
         public void RemoveApplicantEducation(ApplicantEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantEducationLogic(new EFGenericRepository<ApplicantEducationPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveApplicantJobApplication(ApplicantJobApplicationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantJobApplicationLogic(new EFGenericRepository<ApplicantJobApplicationPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveApplicantProfile(ApplicantProfilePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantProfileLogic(new EFGenericRepository<ApplicantProfilePoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveApplicantResume(ApplicantResumePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantResumeLogic(new EFGenericRepository<ApplicantResumePoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveApplicantSkill(ApplicantSkillPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantSkillLogic(new EFGenericRepository<ApplicantSkillPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveApplicantWorkHistory(ApplicantWorkHistoryPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantWorkHistoryLogic(new EFGenericRepository<ApplicantWorkHistoryPoco>(false));
+            logic.Delete(items);
         }
 
         public void UpdateApplicantEducation(ApplicantEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantEducationLogic(new EFGenericRepository<ApplicantEducationPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateApplicantJobApplication(ApplicantJobApplicationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantJobApplicationLogic(new EFGenericRepository<ApplicantJobApplicationPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateApplicantProfile(ApplicantProfilePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantProfileLogic(new EFGenericRepository<ApplicantProfilePoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateApplicantResume(ApplicantResumePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantResumeLogic(new EFGenericRepository<ApplicantResumePoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateApplicantSkill(ApplicantSkillPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantSkillLogic(new EFGenericRepository<ApplicantSkillPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateApplicantWorkHistory(ApplicantWorkHistoryPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new ApplicantWorkHistoryLogic(new EFGenericRepository<ApplicantWorkHistoryPoco>(false));
+            logic.Update(items);
         }
     }
 }
