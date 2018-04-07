@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using CareerCloud.Pocos;
+using CareerCloud.BusinessLogicLayer;
+using CareerCloud.EntityFrameworkDataAccess;
 
 namespace CareerCloud.WCF
 {
@@ -13,181 +15,241 @@ namespace CareerCloud.WCF
     {
         public void CompanyDescription(CompanyDescriptionPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyDescriptionLogic(new EFGenericRepository<CompanyDescriptionPoco>(false));
+            logic.Add(items);
         }
 
         public void CompanyJob(CompanyJobPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobLogic(new EFGenericRepository<CompanyJobPoco>(false));
+            logic.Add(items);
         }
 
         public void CompanyJobDescription(CompanyJobDescriptionPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobDescriptionLogic(new EFGenericRepository<CompanyJobDescriptionPoco>(false));
+            logic.Add(items);
         }
 
         public void CompanyJobEducation(CompanyJobEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobEducationLogic(new EFGenericRepository<CompanyJobEducationPoco>(false));
+            logic.Add(items);
         }
 
         public void CompanyJobSkill(CompanyJobSkillPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobSkillLogic(new EFGenericRepository<CompanyJobSkillPoco>(false));
+            logic.Add(items);
         }
 
         public void CompanyLocation(CompanyLocationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyLocationLogic(new EFGenericRepository<CompanyLocationPoco>(false));
+            logic.Add(items);
         }
 
         public void CompanyProfile(CompanyProfilePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyProfileLogic(new EFGenericRepository<CompanyProfilePoco>(false));
+            logic.Add(items);
         }
 
-        public void DoWork()
-        {
-        }
 
         public List<CompanyDescriptionPoco> GetAllCompanyDescription()
         {
-            throw new NotImplementedException();
+            List<CompanyDescriptionPoco> companyDescriptionPoco = new List<CompanyDescriptionPoco>();
+            var logic = new CompanyDescriptionLogic(new EFGenericRepository<CompanyDescriptionPoco>(false));
+            companyDescriptionPoco = logic.GetAll();
+            return companyDescriptionPoco;
         }
 
         public List<CompanyJobPoco> GetAllCompanyJob()
         {
-            throw new NotImplementedException();
+            List<CompanyJobPoco> companyJobPoco = new List<CompanyJobPoco>();
+            var logic = new CompanyJobLogic(new EFGenericRepository<CompanyJobPoco>(false));
+            companyJobPoco = logic.GetAll();
+            return companyJobPoco;
         }
 
         public List<CompanyJobDescriptionPoco> GetAllCompanyJobDescription()
         {
-            throw new NotImplementedException();
+            List<CompanyJobDescriptionPoco> companyJobDescriptionPoco = new List<CompanyJobDescriptionPoco>();
+            var logic = new CompanyJobDescriptionLogic(new EFGenericRepository<CompanyJobDescriptionPoco>(false));
+            companyJobDescriptionPoco = logic.GetAll();
+            return companyJobDescriptionPoco;
         }
 
         public List<CompanyJobEducationPoco> GetAllCompanyJobEducation()
         {
-            throw new NotImplementedException();
+            List<CompanyJobEducationPoco> companyJobEducationPoco = new List<CompanyJobEducationPoco>();
+            var logic = new CompanyJobEducationLogic(new EFGenericRepository<CompanyJobEducationPoco>(false));
+            companyJobEducationPoco = logic.GetAll();
+            return companyJobEducationPoco;
         }
 
         public List<CompanyJobSkillPoco> GetAllCompanyJobSkill()
         {
-            throw new NotImplementedException();
+            List<CompanyJobSkillPoco> companyJobSkillPoco = new List<CompanyJobSkillPoco>();
+            var logic = new CompanyJobSkillLogic(new EFGenericRepository<CompanyJobSkillPoco>(false));
+            companyJobSkillPoco = logic.GetAll();
+            return companyJobSkillPoco;
         }
 
         public List<CompanyLocationPoco> GetAllCompanyLocation()
         {
-            throw new NotImplementedException();
+            List<CompanyLocationPoco> companyLocationPoco = new List<CompanyLocationPoco>();
+            var logic = new CompanyLocationLogic(new EFGenericRepository<CompanyLocationPoco>(false));
+            companyLocationPoco = logic.GetAll();
+            return companyLocationPoco;
         }
 
         public List<CompanyProfilePoco> GetAllCompanyProfile()
         {
-            throw new NotImplementedException();
+            List<CompanyProfilePoco> companyProfilePoco = new List<CompanyProfilePoco>();
+            var logic = new CompanyProfileLogic(new EFGenericRepository<CompanyProfilePoco>(false));
+            companyProfilePoco = logic.GetAll();
+            return companyProfilePoco;
         }
 
         public CompanyDescriptionPoco GetSingleCompanyDescription(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyDescriptionLogic(new EFGenericRepository<CompanyDescriptionPoco>(false));
+            CompanyDescriptionPoco companyDescriptionPoco = new CompanyDescriptionPoco();
+            companyDescriptionPoco = logic.Get(Guid.Parse(Id));
+            return companyDescriptionPoco;
         }
 
         public CompanyJobPoco GetSingleCompanyJob(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobLogic(new EFGenericRepository<CompanyJobPoco>(false));
+            CompanyJobPoco companyJobPoco = new CompanyJobPoco();
+            companyJobPoco = logic.Get(Guid.Parse(Id));
+            return companyJobPoco;
         }
 
         public CompanyJobDescriptionPoco GetSingleCompanyJobDescription(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobDescriptionLogic(new EFGenericRepository<CompanyJobDescriptionPoco>(false));
+            CompanyJobDescriptionPoco companyJobDescriptionPoco = new CompanyJobDescriptionPoco();
+            companyJobDescriptionPoco = logic.Get(Guid.Parse(Id));
+            return companyJobDescriptionPoco;
         }
 
         public CompanyJobEducationPoco GetSingleCompanyJobEducation(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobEducationLogic(new EFGenericRepository<CompanyJobEducationPoco>(false));
+            CompanyJobEducationPoco companyJobEducationPoco = new CompanyJobEducationPoco();
+            companyJobEducationPoco = logic.Get(Guid.Parse(Id));
+            return companyJobEducationPoco;
         }
 
         public CompanyJobSkillPoco GetSingleCompanyJobSkill(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobSkillLogic(new EFGenericRepository<CompanyJobSkillPoco>(false));
+            CompanyJobSkillPoco companyJobSkillPoco = new CompanyJobSkillPoco();
+            companyJobSkillPoco = logic.Get(Guid.Parse(Id));
+            return companyJobSkillPoco;
         }
 
         public CompanyLocationPoco GetSingleCompanyLocation(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyLocationLogic(new EFGenericRepository<CompanyLocationPoco>(false));
+            CompanyLocationPoco companyLocationPoco = new CompanyLocationPoco();
+            companyLocationPoco = logic.Get(Guid.Parse(Id));
+            return companyLocationPoco;
         }
 
         public CompanyProfilePoco GetSingleCompanyProfile(string Id)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyProfileLogic(new EFGenericRepository<CompanyProfilePoco>(false));
+            CompanyProfilePoco companyProfilePoco = new CompanyProfilePoco();
+            companyProfilePoco = logic.Get(Guid.Parse(Id));
+            return companyProfilePoco;
         }
 
         public void RemoveCompanyDescription(CompanyDescriptionPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyDescriptionLogic(new EFGenericRepository<CompanyDescriptionPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveCompanyJob(CompanyJobPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobLogic(new EFGenericRepository<CompanyJobPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveCompanyJobDescription(CompanyJobDescriptionPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobDescriptionLogic(new EFGenericRepository<CompanyJobDescriptionPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveCompanyJobEducation(CompanyJobEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobEducationLogic(new EFGenericRepository<CompanyJobEducationPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveCompanyJobSkill(CompanyJobSkillPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobSkillLogic(new EFGenericRepository<CompanyJobSkillPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveCompanyLocation(CompanyLocationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyLocationLogic(new EFGenericRepository<CompanyLocationPoco>(false));
+            logic.Delete(items);
         }
 
         public void RemoveCompanyProfile(CompanyProfilePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyProfileLogic(new EFGenericRepository<CompanyProfilePoco>(false));
+            logic.Delete(items);
         }
 
         public void UpdateCompanyDescription(CompanyDescriptionPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyDescriptionLogic(new EFGenericRepository<CompanyDescriptionPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateCompanyJob(CompanyJobPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobLogic(new EFGenericRepository<CompanyJobPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateCompanyJobDescription(CompanyJobDescriptionPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobDescriptionLogic(new EFGenericRepository<CompanyJobDescriptionPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateCompanyJobEducation(CompanyJobEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobEducationLogic(new EFGenericRepository<CompanyJobEducationPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateCompanyJobSkill(CompanyJobSkillPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyJobSkillLogic(new EFGenericRepository<CompanyJobSkillPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateCompanyLocation(CompanyLocationPoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyLocationLogic(new EFGenericRepository<CompanyLocationPoco>(false));
+            logic.Update(items);
         }
 
         public void UpdateCompanyProfile(CompanyProfilePoco[] items)
         {
-            throw new NotImplementedException();
+            var logic = new CompanyProfileLogic(new EFGenericRepository<CompanyProfilePoco>(false));
+            logic.Update(items);
         }
     }
 }
