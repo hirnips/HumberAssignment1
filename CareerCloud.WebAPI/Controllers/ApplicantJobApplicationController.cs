@@ -23,9 +23,9 @@ namespace CareerCloud.WebAPI.Controllers
 
 
         [HttpGet]
-        [Route("education/{applicantJobApplicationId}")]
+        [Route("jobApplication/{applicantJobApplicationId}")]
         [ResponseType(typeof(ApplicantJobApplicationPoco))]
-        public IHttpActionResult GetApplicantEducation(Guid applicantJobApplicationId)
+        public IHttpActionResult GetApplicantJobApplication(Guid applicantJobApplicationId)
         {
             ApplicantJobApplicationPoco applicantJobApplication = _logic.Get(applicantJobApplicationId);
             if (applicantJobApplication == null)
@@ -37,9 +37,9 @@ namespace CareerCloud.WebAPI.Controllers
 
 
         [HttpGet]
-        [Route("education")]
+        [Route("jobApplication")]
         [ResponseType(typeof(List<ApplicantJobApplicationPoco>))]
-        public IHttpActionResult GetAllApplicantEducation(Guid ApplicantJobApplicationPoco)
+        public IHttpActionResult GetAllApplicantJobApplication()
         {
             List<ApplicantJobApplicationPoco> applicantJobApplications = _logic.GetAll();
             if (applicantJobApplications == null)
@@ -50,8 +50,8 @@ namespace CareerCloud.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("education")]
-        public IHttpActionResult SaveApplicantEducation(ApplicantJobApplicationPoco[] applicantJobApplication)
+        [Route("jobApplication")]
+        public IHttpActionResult SaveApplicantJobApplication(ApplicantJobApplicationPoco[] applicantJobApplication)
         {
             if (applicantJobApplication == null)
             {
@@ -63,8 +63,8 @@ namespace CareerCloud.WebAPI.Controllers
 
 
         [HttpPut]
-        [Route("education")]
-        public IHttpActionResult UpdateApplicantEducation(ApplicantJobApplicationPoco[] applicantJobApplication)
+        [Route("jobApplication")]
+        public IHttpActionResult UpdateApplicantJobApplication(ApplicantJobApplicationPoco[] applicantJobApplication)
         {
             if (applicantJobApplication == null)
             {
@@ -75,8 +75,8 @@ namespace CareerCloud.WebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("education")]
-        public IHttpActionResult DeleteApplicantEducation(ApplicantJobApplicationPoco[] applicantJobApplication)
+        [Route("jobApplication")]
+        public IHttpActionResult DeleteApplicantJobApplication(ApplicantJobApplicationPoco[] applicantJobApplication)
         {
             if (applicantJobApplication == null)
             {

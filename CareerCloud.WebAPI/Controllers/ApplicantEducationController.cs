@@ -38,7 +38,7 @@ namespace CareerCloud.WebAPI.Controllers
         [HttpGet]
         [Route("education")]
         [ResponseType(typeof(List<ApplicantEducationPoco>))]
-        public IHttpActionResult GetAllApplicantEducation(Guid applicantEducationId)
+        public IHttpActionResult GetAllApplicantEducation()
         {
             List<ApplicantEducationPoco> applicantEducations = _logic.GetAll();
             if (applicantEducations == null)
