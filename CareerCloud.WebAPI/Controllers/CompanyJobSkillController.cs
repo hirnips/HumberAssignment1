@@ -51,7 +51,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("JobSkill")]
-        public IHttpActionResult SaveCompanyJobSkill(CompanyJobSkillPoco[] companyJobSkill)
+        public IHttpActionResult PostCompanyJobSkill(CompanyJobSkillPoco[] companyJobSkill)
         {
             if (companyJobSkill == null)
             {
@@ -64,7 +64,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("JobSkill")]
-        public IHttpActionResult UpdateCompanyJobSkill(CompanyJobSkillPoco[] companyJobSkill)
+        public IHttpActionResult PutCompanyJobSkill(CompanyJobSkillPoco[] companyJobSkill)
         {
             if (companyJobSkill == null)
             {

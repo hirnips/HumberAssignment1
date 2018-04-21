@@ -51,7 +51,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("resume")]
-        public IHttpActionResult SaveApplicantResume(ApplicantResumePoco[] applicantResume)
+        public IHttpActionResult PostApplicantResume(ApplicantResumePoco[] applicantResume)
         {
             if (applicantResume == null)
             {
@@ -64,7 +64,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("resume")]
-        public IHttpActionResult UpdateApplicantResume(ApplicantResumePoco[] applicantResume)
+        public IHttpActionResult PutApplicantResume(ApplicantResumePoco[] applicantResume)
         {
             if (applicantResume == null)
             {

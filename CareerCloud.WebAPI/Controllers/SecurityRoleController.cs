@@ -51,7 +51,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("role")]
-        public IHttpActionResult SaveSecurityRole(SecurityRolePoco[] securityRole)
+        public IHttpActionResult PostSecurityRole(SecurityRolePoco[] securityRole)
         {
             if (securityRole == null)
             {
@@ -64,7 +64,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("role")]
-        public IHttpActionResult UpdateSecurityRole(SecurityRolePoco[] securityRole)
+        public IHttpActionResult PutSecurityRole(SecurityRolePoco[] securityRole)
         {
             if (securityRole == null)
             {

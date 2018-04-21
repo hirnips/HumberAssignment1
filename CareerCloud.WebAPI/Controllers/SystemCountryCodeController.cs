@@ -25,7 +25,7 @@ namespace CareerCloud.WebAPI.Controllers
         [HttpGet]
         [Route("code/{systemCountryCodeId}")]
         [ResponseType(typeof(SystemCountryCodePoco))]
-        public IHttpActionResult GetCountryCode(string systemCountryCodeId)
+        public IHttpActionResult GetSystemCountryCode(string systemCountryCodeId)
         {
             SystemCountryCodePoco countryCode = _logic.GetSingle(systemCountryCodeId);
             if (countryCode == null)
@@ -51,7 +51,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("code")]
-        public IHttpActionResult SaveCountryCode(SystemCountryCodePoco[] countryCode)
+        public IHttpActionResult PostSystemCountryCode(SystemCountryCodePoco[] countryCode)
         {
             if (countryCode == null)
             {
@@ -64,7 +64,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("code")]
-        public IHttpActionResult UpdateCountryCode(SystemCountryCodePoco[] countryCode)
+        public IHttpActionResult PutSystemCountryCode(SystemCountryCodePoco[] countryCode)
         {
             if (countryCode == null)
             {
@@ -76,7 +76,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpDelete]
         [Route("code")]
-        public IHttpActionResult DeleteCountryCode(SystemCountryCodePoco[] countryCode)
+        public IHttpActionResult DeleteSystemCountryCode(SystemCountryCodePoco[] countryCode)
         {
             if (countryCode == null)
             {

@@ -50,7 +50,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("workHistory")]
-        public IHttpActionResult SaveApplicantWorkHistory(ApplicantWorkHistoryPoco[] applicantWorkHistory)
+        public IHttpActionResult PostApplicantWorkHistory(ApplicantWorkHistoryPoco[] applicantWorkHistory)
         {
             if (applicantWorkHistory == null)
             {
@@ -63,7 +63,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("workHistory")]
-        public IHttpActionResult UpdateApplicantWorkHistory(ApplicantWorkHistoryPoco[] applicantWorkHistory)
+        public IHttpActionResult PutApplicantWorkHistory(ApplicantWorkHistoryPoco[] applicantWorkHistory)
         {
             if (applicantWorkHistory == null)
             {

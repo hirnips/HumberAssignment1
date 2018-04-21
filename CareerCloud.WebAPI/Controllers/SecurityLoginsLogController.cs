@@ -50,7 +50,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("loginLog")]
-        public IHttpActionResult SaveSecurityLoginLog(SecurityLoginsLogPoco[] securityLoginLog)
+        public IHttpActionResult PostSecurityLoginLog(SecurityLoginsLogPoco[] securityLoginLog)
         {
             if (securityLoginLog == null)
             {
@@ -63,7 +63,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("loginLog")]
-        public IHttpActionResult UpdateSecurityLoginLog(SecurityLoginsLogPoco[] securityLoginLog)
+        public IHttpActionResult PutSecurityLoginLog(SecurityLoginsLogPoco[] securityLoginLog)
         {
             if (securityLoginLog == null)
             {

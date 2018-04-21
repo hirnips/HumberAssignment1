@@ -50,7 +50,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("companyJob")]
-        public IHttpActionResult SaveCompanyJob(CompanyJobPoco[] companyJob)
+        public IHttpActionResult PostCompanyJob(CompanyJobPoco[] companyJob)
         {
             if (companyJob == null)
             {
@@ -63,7 +63,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("companyJob")]
-        public IHttpActionResult UpdateCompanyJob(CompanyJobPoco[] companyJob)
+        public IHttpActionResult PutCompanyJob(CompanyJobPoco[] companyJob)
         {
             if (companyJob == null)
             {

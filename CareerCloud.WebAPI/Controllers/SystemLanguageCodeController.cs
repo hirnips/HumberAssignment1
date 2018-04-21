@@ -26,7 +26,7 @@ namespace CareerCloud.WebAPI.Controllers
         [HttpGet]
         [Route("languageCode/{systemLanguageCodeId}")]
         [ResponseType(typeof(SystemLanguageCodePoco))]
-        public IHttpActionResult GetLanguageCode(string systemLanguageCodeId)
+        public IHttpActionResult GetSystemLanguageCode(string systemLanguageCodeId)
         {
             SystemLanguageCodePoco languageCode = _logic.GetSingle(systemLanguageCodeId);
             if (languageCode == null)
@@ -52,7 +52,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("languageCode")]
-        public IHttpActionResult SaveLanguageCode(SystemLanguageCodePoco[] languageCode)
+        public IHttpActionResult PostSystemLanguageCode(SystemLanguageCodePoco[] languageCode)
         {
             if (languageCode == null)
             {
@@ -65,7 +65,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("languageCode")]
-        public IHttpActionResult UpdateLanguageCode(SystemLanguageCodePoco[] languageCode)
+        public IHttpActionResult PutSystemLanguageCode(SystemLanguageCodePoco[] languageCode)
         {
             if (languageCode == null)
             {
@@ -77,7 +77,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpDelete]
         [Route("languageCode")]
-        public IHttpActionResult DeleteLanguageCode(SystemLanguageCodePoco[] languageCode)
+        public IHttpActionResult DeleteSystemLanguageCode(SystemLanguageCodePoco[] languageCode)
         {
             if (languageCode == null)
             {

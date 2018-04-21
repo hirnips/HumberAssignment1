@@ -24,7 +24,7 @@ namespace CareerCloud.WebAPI.Controllers
         [HttpGet]
         [Route("loginRole/{securityLoginRoleId}")]
         [ResponseType(typeof(SecurityLoginsRolePoco))]
-        public IHttpActionResult GetSecurityLoginRole(Guid securityLoginRoleId)
+        public IHttpActionResult GetSecurityLoginsRole(Guid securityLoginRoleId)
         {
             SecurityLoginsRolePoco securityLoginRole = _logic.Get(securityLoginRoleId);
             if (securityLoginRole == null)
@@ -50,7 +50,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("loginRole")]
-        public IHttpActionResult SaveSecurityLoginRole(SecurityLoginsRolePoco[] securityLoginRole)
+        public IHttpActionResult PostSecurityLoginRole(SecurityLoginsRolePoco[] securityLoginRole)
         {
             if (securityLoginRole == null)
             {
@@ -63,7 +63,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("loginRole")]
-        public IHttpActionResult UpdateSecurityLoginRole(SecurityLoginsRolePoco[] securityLoginRole)
+        public IHttpActionResult PutSecurityLoginRole(SecurityLoginsRolePoco[] securityLoginRole)
         {
             if (securityLoginRole == null)
             {

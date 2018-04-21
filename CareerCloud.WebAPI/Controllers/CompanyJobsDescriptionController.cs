@@ -9,14 +9,13 @@ using CareerCloud.Pocos;
 using CareerCloud.EntityFrameworkDataAccess;
 using System.Web.Http.Description;
 
+
 namespace CareerCloud.WebAPI.Controllers
 {
-    [RoutePrefix("api/careercloud/company/v1")]
-    public class CompanyJobDescriptionController : ApiController
+    public class CompanyJobsDescriptionController : ApiController
     {
         private CompanyJobDescriptionLogic _logic;
-
-        public CompanyJobDescriptionController()
+        public CompanyJobsDescriptionController()
         {
             _logic = new CompanyJobDescriptionLogic(new EFGenericRepository<CompanyJobDescriptionPoco>(false));
         }
@@ -24,7 +23,7 @@ namespace CareerCloud.WebAPI.Controllers
         [HttpGet]
         [Route("jobDescription/{companyJobDescriptionId}")]
         [ResponseType(typeof(CompanyJobDescriptionPoco))]
-        public IHttpActionResult GetCompanyJobDescription(Guid companyJobDescriptionId)
+        public IHttpActionResult GetCompanyJobsDescription(Guid companyJobDescriptionId)
         {
             CompanyJobDescriptionPoco companyJobDescription = _logic.Get(companyJobDescriptionId);
             if (companyJobDescription == null)
@@ -50,7 +49,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPost]
         [Route("jobDescription")]
-        public IHttpActionResult SaveCompanyJobDescription(CompanyJobDescriptionPoco[] companyJobDescription)
+        public IHttpActionResult PostCompanyJobsDescription(CompanyJobDescriptionPoco[] companyJobDescription)
         {
             if (companyJobDescription == null)
             {
@@ -63,7 +62,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpPut]
         [Route("jobDescription")]
-        public IHttpActionResult UpdateCompanyJobDescription(CompanyJobDescriptionPoco[] companyJobDescription)
+        public IHttpActionResult PutCompanyJobsDescription(CompanyJobDescriptionPoco[] companyJobDescription)
         {
             if (companyJobDescription == null)
             {
@@ -75,7 +74,7 @@ namespace CareerCloud.WebAPI.Controllers
 
         [HttpDelete]
         [Route("jobDescription")]
-        public IHttpActionResult DeleteCompanyJobDescription(CompanyJobDescriptionPoco[] companyJobDescription)
+        public IHttpActionResult DeleteCompanyJobsDescription(CompanyJobDescriptionPoco[] companyJobDescription)
         {
             if (companyJobDescription == null)
             {
